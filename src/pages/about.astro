@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="Sobre mí | Lucas Diaz" description="Sobre mí Lucas Diaz">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="Sobre mí"
+				tagline="Gracias por pasar. Lea a continuación para obtener más información sobre mí y mis antecedentes."
+			>
+				<!-- <img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Lucas Diaz at work with a colleague"
+				/> -->
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Antecedentes</h2>
+				<div class="content">
+					<p>
+						Hola! Mi nombre es Lucas Diaz y disfruto crear cosas que viven en internet. Mi interés en el desarrollo web comenzó en 2012 cuando decidí crear mi propia página como hobby, al poco tiempo entré a trabajar en el portal de <a href="https://www.argentina.gob.ar/interior/turismo">Turismo de la Nación</a> donde aprendí mucho sobre HTML y CSS!.
+
+					</p>
+					<p>
+						Avance rápido hasta hoy, y tuve el privilegio de trabajar en empresas con gran renombre, actualmente soy profesor universitario y referente de tecnologías educativas en en nivel secundario. Mi enfoque principal en estos días es crear productos y experiencias digitales accesibles e inclusivos para una gran variedad de clientes.
+
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Educación</h2>
+				<div class="content">
+					<p>Profesor en Computación. Res. Ministerial N° 2519/98. UNLPam.</p>
+					<p>Magíster en “Enseñanza en Escenarios Digitales” (Estudios en curso 1er año). Res. Ministerial N° 100/18. AUSA.</p>
+					<p>Postítulo en Programación y Robótica. Res. Ministerio de Educación de La Pampa N° 0443/20.</p>
+					<p>Postítulo en Desafíos pedagógicos desde la inclusión para referentes tecnológicos. Res. Nº 746/21. ISFD Col. Barn- ITES.</p>
+					<p>Carrera Certified Tech Developer | Digital House Argentina | Mercado Libre | Globant.</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Habilidades</h2>
+				<div class="content">
+          <ul class="list-disc pl-4">
+            <li>JavaScript (ES6+)</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>TypeScript</li>
+            <li>WordPress</li>
+          </ul>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
